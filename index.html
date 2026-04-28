@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Serhii Polovko | Joker Gems - Jewel Joker</title>
+    <style>
+        :root {
+            --bg: #09021a;
+            --accent: #00ffcc; /* Gem Green */
+            --accent-two: #9d00ff; /* Joker Purple */
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+            --text-dim: #a5a2b8;
+        }
+        body {
+            margin: 0; padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            background: var(--bg);
+            background-image: radial-gradient(circle at top left, rgba(157, 0, 255, 0.15), transparent 400px),
+                              radial-gradient(circle at bottom right, rgba(0, 255, 204, 0.1), transparent 400px);
+            color: var(--text);
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%; max-width: 500px;
+            padding-top: calc(env(safe-area-inset-top) + 70px);
+            padding-bottom: 40px; box-sizing: border-box;
+            display: flex; flex-direction: column; gap: 20px; padding-left: 20px; padding-right: 20px;
+        }
+        .nav {
+            display: flex; justify-content: space-around;
+            background: var(--glass); backdrop-filter: blur(20px);
+            padding: 12px; border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky; top: 70px; z-index: 100;
+        }
+        .nav a {
+            text-decoration: none; color: var(--text-dim); font-size: 13px;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            padding: 8px 10px; transition: 0.3s;
+        }
+        .nav a.active { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        
+        .card {
+            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 35px; padding: 35px; text-align: center;
+            backdrop-filter: blur(30px); animation: fadeIn 0.8s ease-out;
+        }
+        .app-icon {
+            width: 90px; height: 90px;
+            background: linear-gradient(135deg, var(--accent-two), #5b0094);
+            border-radius: 22px; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 45px; box-shadow: 0 10px 30px rgba(157, 0, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h1 { font-size: 24px; margin: 0; color: var(--accent); line-height: 1.2; }
+        .dev-label { font-size: 12px; color: var(--text-dim); margin-top: 10px; letter-spacing: 2px; }
+        .main-btn {
+            background: linear-gradient(90deg, var(--accent-two), #7000ff);
+            color: white; padding: 18px; border-radius: 20px;
+            text-decoration: none; font-weight: 800; text-align: center;
+            margin-top: 10px; transition: 0.3s; box-shadow: 0 10px 20px rgba(112, 0, 255, 0.2);
+        }
+        .main-btn:active { transform: scale(0.96); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="marketing.html">Story</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <div class="card">
+            <div class="app-icon">🃏</div>
+            <h1>Joker Gems - Jewel Joker</h1>
+            <div class="dev-label">BY SERHII POLOVKO</div>
+            <p style="color: var(--text-dim); line-height: 1.6; margin-top: 25px;">
+                Welcome to the digital realm of <strong>Joker Gems</strong>. I am focused on building premium mobile experiences that combine aesthetics with seamless performance.
+            </p>
+        </div>
+
+        <a href="marketing.html" class="main-btn">Meet the Developer</a>
+    </div>
+</body>
+</html>
