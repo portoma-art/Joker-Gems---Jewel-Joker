@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy | Joker Gems - Jewel Joker</title>
+    <style>
+        :root { --bg: #09021a; --accent: #00ffcc; --glass: rgba(255, 255, 255, 0.05); --text: #ffffff; }
+        body { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); display: flex; flex-direction: column; align-items: center; }
+        .container { width: 100%; max-width: 500px; padding: calc(env(safe-area-inset-top) + 70px) 20px 40px; box-sizing: border-box; }
+        .nav { display: flex; justify-content: space-around; background: var(--glass); backdrop-filter: blur(20px); padding: 12px; border-radius: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .nav a { text-decoration: none; color: #a5a2b8; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+        .card { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); border-radius: 35px; padding: 30px; backdrop-filter: blur(30px); }
+        h1 { color: var(--accent); font-size: 24px; }
+        p { color: #a5a2b8; line-height: 1.7; font-size: 15px; }
+        .close-btn { 
+            background: rgba(0, 255, 204, 0.1); border: 1px solid var(--accent); 
+            color: var(--accent); padding: 16px; border-radius: 18px; width: 100%; 
+            font-weight: bold; margin-top: 30px; cursor: pointer; transition: 0.3s;
+        }
+        .close-btn:active { background: var(--accent); color: #09021a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="marketing.html">Story</a>
+            <a href="privacy.html" style="color: var(--accent);">Privacy</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <div class="card">
+            <h1>Privacy Policy</h1>
+            <p><strong>Your trust is my priority.</strong></p>
+            <p>At <strong>Joker Gems - Jewel Joker</strong>, we believe in a "Zero Data" approach. Our privacy commitment is absolute:</p>
+            <ul style="color: #a5a2b8; padding-left: 20px; line-height: 1.8;">
+                <li>We do not collect any personal data.</li>
+                <li>We do not store your information on any servers.</li>
+                <li>We do not share any data with third parties.</li>
+            </ul>
+            <p>Everything you do in the app stays on your device. Period.</p>
+            
+            <button class="close-btn" onclick="closeAppWebView()">I Understand & Return</button>
+        </div>
+    </div>
+
+    <script>
+        function closeAppWebView() {
+            // Native iOS Bridge
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeWebView) {
+                window.webkit.messageHandlers.closeWebView.postMessage("close");
+            } else {
+                console.log("Native handler not detected.");
+                alert("Privacy Policy accepted. You can now go back.");
+            }
+        }
+    </script>
+</body>
+</html>
